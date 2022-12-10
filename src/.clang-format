@@ -5,3 +5,4 @@ IndentWidth: 4
 UseTab: Never
 BreakBeforeBraces: Allman
 QualifierAlignment: Left
+IncludeBlocks: Preserve
