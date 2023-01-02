@@ -6,10 +6,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -fsanitize=undefined 
 
 # Conan setup
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
+conan_basic_setup(TARGETS)
 
 # Executable
-add_executable(${PROJECT_NAME} main.cpp)
-message(STATUS "libs ${CONAN_LIBS}")
-target_link_libraries(${PROJECT_NAME} PRIVATE Catch2Main Catch2)
+add_executable(${PROJECT_NAME} tests.cpp catch_main.cpp)
+target_link_libraries(${PROJECT_NAME} PRIVATE CONAN_PKG::catch2)
 
