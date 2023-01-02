@@ -2,7 +2,4 @@
 
 #include <iostream>
 
-TEST_CASE("foo")
-{
-    REQUIRE(1 == 2);
-}
+TEST_CASE("foo") { REQUIRE(1 == 2); }
