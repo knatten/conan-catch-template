@@ -11,8 +11,17 @@ conan profile new default --detect
 conan profile update settings.compiler.libcxx=libstdc++11 default
 ```
 
-### Install Catch2
+If you want custom compilers in the Conan profile, edit the settings `compiler` and `compiler.version`. Remember to
+also and set the environment variables `CC` and `CXX`.
+
+### Install Conan dependencies
 ```shell
 mkdir build
 conan install ../src
+```
+
+### Build
+Use the same compilers as in your default profile
+```shell
+cmake ../../src/ -GNinja -DCMAKE_C_COMPILER=... -DCMAKE_CXX_COMPILER=...
 ```
